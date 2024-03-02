@@ -1,0 +1,74 @@
+{
+  "namespace": "Templates",
+  "items": {
+    "includes": [
+      {
+        "name": "$Templates/$Foundation",
+        "path": "/sitecore/templates/Foundation",
+        "allowedPushOperations": "createUpdateAndDelete",
+        "scope": "ItemAndDescendants",
+        "rules": [
+          {
+            "path": "/Guppy Code Crew",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "createUpdateAndDelete"
+          },
+          {
+            "path": "/*",
+            "scope": "ignored"
+          }
+        ]
+      },
+      {
+        "name": "$Templates/$Feature",
+        "path": "/sitecore/templates/Feature",
+        "allowedPushOperations": "createUpdateAndDelete",
+        "scope": "ItemAndDescendants",
+        "rules": [
+          {
+            "path": "/Guppy Code Crew",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "createUpdateAndDelete"
+          },
+          {
+            "path": "/*",
+            "scope": "ignored"
+          }
+        ]
+      },
+      {
+        "name": "$Templates/$Project",
+        "path": "/sitecore/templates/Project",
+        "scope": "ItemAndDescendants",
+        "rules": [
+          {
+            "path": "/Guppy Code Crew",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "createUpdateAndDelete"
+          },
+          {
+            "path": "/*",
+            "scope": "ignored"
+          }
+        ]
+        
+      },
+	  {
+        "name": "$Templates/$Branches/$Feature",
+        "path": "/sitecore/templates/Branches/Feature",
+        "scope": "ItemAndDescendants",
+        "rules": [
+          {
+            "path": "/Guppy Code Crew",
+            "scope": "ItemAndDescendants",
+            "allowedPushOperations": "createUpdateAndDelete"
+          },
+          {
+            "path": "/*",
+            "scope": "ignored"
+          }
+        ]
+      }
+    ]
+  }
+}

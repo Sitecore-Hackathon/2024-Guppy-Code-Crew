@@ -1,0 +1,28 @@
+{
+  "namespace": "Content",
+  "references": [
+    "Templates"
+  ],
+  "items": {
+    "includes": [
+      {
+        "name": "$Content/ContentItem",
+        "path": "/sitecore/content",
+        "scope": "SingleItem",
+        "allowedPushOperations": "CreateOnly"
+      },
+      {
+        "name": "$Content/Tenant",
+        "path": "/sitecore/content/Guppy Code Crew",
+        "scope": "SingleItem",
+        "allowedPushOperations": "createAndUpdate"
+      },
+      {
+        "name": "$Content/Site",
+        "path": "/sitecore/content/Guppy Code Crew/Hackathon",
+        "scope": "ItemAndDescendants",
+				"allowedPushOperations": "createUpdateAndDelete"
+      }
+    ]
+  }
+}
