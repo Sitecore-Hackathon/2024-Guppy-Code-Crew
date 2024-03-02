@@ -7,8 +7,12 @@ SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
+    Import-Function Get-GraphQLType
+    Import-Function Get-FieldStatements
+    
     # Set the item path to the item you want to examine
     #$itemPath = "/sitecore/content/Guppy Code Crew/Hackathon/Data/Cool Banner Folder/CoolBanner"
+    #$itemPath = "/sitecore/content/Guppy Code Crew/Hackathon/Home/About Us/Company"
     
     # Get the item
     #$item = Get-Item -Path $itemPath
@@ -41,52 +45,18 @@ SharedFields:
     
     # Iterate through all fields of the item
     foreach ($field in $fields) {
-        # Get the field type
+        # Get the field type, ignoring __ fields
         if ($field.Name -like "__*") {
             continue
         }
         $fieldType = $field.Type
-        # Check the field type and add it to the GraphQL query accordingly
-        switch ($fieldType) {
-            {($_ -eq "Single-Line Text") -or ($_ -eq "Multi-Line Text") -or ($_ -eq "Rich Text") -or ($_ -eq "Number") -or ($_ -eq "Integer") -or ($_ -eq "Date") -or ($_ -eq "Datetime") -or ($_ -eq "Checkbox") -or ($_ -eq "DropLink") -or ($_ -eq "Drop Tree")} {
-                $queryItem.fields[$field.Name] = @{
-                    name = $field.Name
-                    type = "TextField"
-                }
-            }
-            "General Link" {
-                $queryItem.fields[$field.Name] = @{
-                    name = $field.Name
-                    type = "LinkField"
-                }
-            }
-            "Image" {
-                $queryItem.fields[$field.Name] = @{
-                    name = $field.Name
-                    type = "ImageField"
-                }
-            }
-            "File" {
-                $queryItem.fields[$field.Name] = @{
-                    name = $field.Name
-                    type = "FileField"
-                }
-            }
-            # Add more field types as needed
-        }
+    
+        # Call the new function to add field types to GraphQL query
+        $queryItem.fields = Get-GraphQLType -FieldType $fieldType -FieldName $field.Name -QueryItemFields $queryItem.fields
     }
     
     #Generate field structure by type
-    $fieldStatements = $($queryItem.fields.Keys | ForEach-Object {
-            $fieldName = $queryItem.fields[$_].name
-            $fieldType = $queryItem.fields[$_].type
-            if ($queryItem.fields[$_].type -eq "LinkField") {
-               "$($fieldName) { `n        id`n        url`n        target`n        text`n        anchor`n      }"
-            } else {
-               "$($fieldName) { `n        jsonValue`n      }"
-            }
-            
-          }) -join "`n      "
+    $fieldStatements = Get-FieldStatements -QueryItemFields $queryItem.fields
     
     # Define the GraphQL query format
     $graphQLItemQuery = @"
@@ -136,8 +106,6 @@ SharedFields:
         -Description $description `
         -Title $title -Width 600 -Height 640 -OkButtonName "Close"
     }
-    
-    
 Languages:
 - Language: en
   Versions:
@@ -156,11 +124,11 @@ Languages:
         sitecore\daustin@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "613a33a2-1e01-475e-b881-7ff91a2b604e"
+      Value: "223262ef-14c2-486b-9587-78b55425ecfb"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T055535Z
+      Value: 20240302T145450Z

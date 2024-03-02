@@ -1,7 +1,7 @@
 ﻿---
 ID: "e73cbf70-4de8-48ed-b171-ab457be19238"
 Parent: "ac43bcc3-50b8-4e23-a0ce-84bab3be3faf"
-Template: "76b310a7-0851-446e-842d-bd1bf156e779"
+Template: "2920a689-8d92-429c-aacc-fb689adff427"
 Path: /sitecore/content/Guppy Code Crew/Hackathon/Home/About Us
 SharedFields:
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
@@ -24,11 +24,11 @@ Languages:
       Value: About Us
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "85d4495b-fa35-4606-9ad4-d962fe563c0d"
+      Value: "7bce0765-9194-4979-bc7f-fce98af91a39"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T044741Z
+      Value: 20240302T144654Z

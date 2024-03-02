@@ -1,14 +1,15 @@
 ﻿---
-ID: "eea11ea0-c30e-413f-a10b-b4e3ad06c6c8"
-Parent: "912f2b70-1dbe-4ed2-bdab-a9e41bb10fb0"
-Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
-Path: /sitecore/templates/Feature/Guppy Code Crew/CoolBanner
+ID: "b3c1c4b2-f140-4202-924e-0dade6094b0e"
+Parent: "47c85870-218a-42e0-9303-5bc773f71758"
+Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
+Path: /sitecore/templates/Feature/Guppy Code Crew/Base Banner/Details/caption
 SharedFields:
-- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
-  Hint: __Base template
-  Value: |
-    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
-    {7AA102EA-2079-43D9-8EA7-0C4483F78A93}
+- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
+  Hint: Type
+  Value: "Single-Line Text"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
 Languages:
 - Language: en
   Versions:
@@ -16,7 +17,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20240302T012459Z
+      Value: 20240302T140932Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -27,11 +28,11 @@ Languages:
         sitecore\daustin@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "c82349c1-2efd-4b36-a4c4-18c617b31c32"
+      Value: "834d4b2e-7c6e-47c7-b61d-7aa034c39cbc"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T140953Z
+      Value: 20240302T140932Z

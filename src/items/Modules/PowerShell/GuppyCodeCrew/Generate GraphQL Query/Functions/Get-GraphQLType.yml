@@ -1,0 +1,75 @@
+﻿---
+ID: "39d1c21c-73f8-4e2b-bb8b-df5376cf12b5"
+Parent: "083e79df-8f72-43ad-95c0-8fa184db000e"
+Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
+Path: "/sitecore/system/Modules/PowerShell/Script Library/SPE/GuppyCodeCrew/Generate GraphQL Query/Functions/Get-GraphQLType"
+SharedFields:
+- ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
+  Hint: Script
+  Value: |
+    function Get-GraphQLType{
+        param(
+            [string]$FieldType,
+            [string]$FieldName,
+            [System.Collections.Hashtable]$QueryItemFields
+        )
+    
+        switch ($FieldType) {
+            {($_ -eq "Single-Line Text") -or ($_ -eq "Multi-Line Text") -or ($_ -eq "Rich Text") -or ($_ -eq "Number") -or ($_ -eq "Integer") -or ($_ -eq "Date") -or ($_ -eq "Datetime") -or ($_ -eq "Checkbox") -or ($_ -eq "DropLink") -or ($_ -eq "Drop Tree")} {
+                $QueryItemFields[$FieldName] = @{
+                    name = $FieldName
+                    type = "TextField"
+                }
+            }
+            "General Link" {
+                $QueryItemFields[$FieldName] = @{
+                    name = $FieldName
+                    type = "LinkField"
+                }
+            }
+            "Image" {
+                $QueryItemFields[$FieldName] = @{
+                    name = $FieldName
+                    type = "ImageField"
+                }
+            }
+            "File" {
+                $QueryItemFields[$FieldName] = @{
+                    name = $FieldName
+                    type = "FileField"
+                }
+            }
+            # Add more field types as needed
+        }
+    
+        return $QueryItemFields
+    }
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 50
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240302T125438Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\ddunn@getfishtank.ca
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\ddunn@getfishtank.ca
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4d9e53ce-799a-460c-8ad6-9a21186a5189"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\ddunn@getfishtank.ca
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T135626Z

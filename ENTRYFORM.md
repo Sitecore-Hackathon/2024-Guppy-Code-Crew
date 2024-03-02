@@ -9,23 +9,20 @@
 You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
 
 ## Team name
-⟹ Write the name of your Hackathon team here
+⟹ Guppy Code Crew
 
 ## Category
 ⟹ Write the name of the selected category
 
 ## Description
-⟹ Write a clear description of your hackathon entry.  
+⟹ Best Module for XM/XP or XM Cloud  
 
-  - Module Purpose
-  - What problem was solved (if any)
-    - How does this module solve it
-
-_You can alternately paste a [link here](#docs) to a document within this repo containing the description._
+  - Module Purpose: Generate GraphQL item and layout queries from any selected Sitecore item. 
+  
+  - Problem Solved: This PowerShell script, by generating either an item query or a layout query allows the developer to quickly get from having no GraphQL to a base skeleton of the item they are trying to obtain, saving them time and providing them potential examples.
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
-
 ⟹ [Replace this Video link](#video-link)
 
 
@@ -33,12 +30,11 @@ _You can alternately paste a [link here](#docs) to a document within this repo c
 ## Pre-requisites and Dependencies
 
 ⟹ Does your module rely on other Sitecore modules or frameworks?
-
+- PowerShell
+- GraphQL Playground via: https://xmcloudcm.localhost/sitecore/api/graph/edge/ide
 - List any dependencies
 - Or other modules that must be installed
 - Or services that must be enabled/configured
-
-_Remove this subsection if your entry does not have any prerequisites other than Sitecore_
 
 ## Installation instructions
 ⟹ Write a short clear step-wise instruction on how to install your module.  
@@ -57,14 +53,26 @@ _Remove this subsection if your entry does not have any prerequisites other than
  
 for example:
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ...
-3. profit
+### Clone Repo
 
-### Configuration
-⟹ If there are any custom configuration that has to be set manually then remember to add all details here.
+### Docker Setup
 
-_Remove this subsection if your entry does not require any configuration that is not fully covered in the installation instructions already_
+1. In an ADMIN terminal:
+
+    ```ps1
+    .\init.ps1 -InitEnv -LicenseXmlPath "C:\path\to\license.xml" -AdminPassword "DesiredAdminPassword"
+    ```
+
+2. Restart your terminal and run:
+
+    ```ps1
+    .\up.ps1
+    ```
+3. Run the following command to push all serialized items, including example items into Sitecore
+
+    ```ps1
+    dotnet sitecore ser push
+    ```
 
 ## Usage instructions
 ⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
