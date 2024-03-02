@@ -75,7 +75,11 @@ for example:
     ```
 
 ## Usage instructions
-⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
+
+### Install PowerShell Module Package
+[Package Download](/docs/packages/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip)
+
+### Install Content and Template Test Data Package
 
 ### How To Use
 You can access the powershell script "Generate GraphQL Query" for any item in the content tree by right-clicking
