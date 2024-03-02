@@ -53,36 +53,57 @@ We used Docker along with the Sitecore Foundation Head for XM Cloud as our base.
     ```ps1
     dotnet sitecore ser push
     ```
+4. While the dotnet sitecore ser push above would push both the content, templates AND the PowerShell module, a bug was discovered during the course of the Hackathon where as the serialization of PowerShell modules did not get indexed and available. [Sitecore Community - SPE - Bug](https://sitecorechat.slack.com/archives/C09THADMX/p1709394930730419?thread_ts=1709394003.679919&cid=C09THADMX)
 
-4. Open up Content Editor via the following url:
+As such we strongly recommend at this time installing the two packages below to ensure all approprate content is available.
+
+
+
+-- Install PowerShell Module Package
+[PowerShell Module Package Download](/docs/modulefiles/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip) - Navigate to and download the zip file from the menu.
+
+-- Install Content and Template Test Data Package
+[Content and Template Package Download (zip)](/docs/modulefiles/GuppyCodeCrew-ContentAndTemplates.zip) - Navigate to and download the zip file from the menu.
+
+Once done
+
+5. Open up Content Editor via the following url:
 ```
 https://xmcloudcm.localhost/sitecore/shell/?sc_lang=en
 ```
 
-5. Open up the GraphQL IDE Playground via the following url:
+6. Open up the GraphQL IDE Playground via the following url:
 ```
 https://xmcloudcm.localhost/sitecore/api/graph/edge/ide
 ```
 
-6. Obtain the API key for the playground here:
+7. Obtain the API key for the playground here:
 ```
 /sitecore/system/Settings/Services/API Keys/xmcloudpreview
 ```
 
-7. Paste it into the playground in the following format in the Http Headers tab at the bottom of your screen:
+8. Paste it into the playground in the following format in the Http Headers tab at the bottom of your screen:
 ```
 {
   "sc_apikey":"FC1EF909-5D16-4C5C-A6A3-CD08382E2D9D"
 }
 ```
 
+Your setup is now complete. Please proceed to the Usage Instructions.
+
 ## Usage instructions
+By installing the sample content in the package above you will have a ready Headless Tenant/Site and sample content to try out the PowerShell module.
 
-### Install PowerShell Module Package
-[PowerShell Module Package Download](/docs/modulefiles/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip) - Navigate to and download the zip file from the menu.
+1. Navigate to an item in the site tree, here's an example
+```
+/sitecore/content/Guppy Code Crew/Hackathon/Home/About Us/Company
+```
 
-### Install Content and Template Test Data Package
-[Content and Template Package Download (zip)](/docs/modulefiles/GuppyCodeCrew-ContentAndTemplates.zip) - Navigate to and download the zip file from the menu.
+2. Next, right-click on the item and navigate to the Scripts sub menu.
+
+3. Select *Generate GraphQL Query*
+
+4. A dialog should open up. As the above link has a layout, you'll have two tabs.  Select either, copy the text and paste it into the 
 
 ### Module Location
 You can find the PowerShell module here:
@@ -109,4 +130,4 @@ For items in the content tree that have a layout, you can access the Layout Quer
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
 ## Comments
-If you'd like to make additional comments that is important for your module entry.
+We are aware of one bug where performing GraphQL Query Generator against a template of name "Page" creates an error. Hence all "pages" in the sample site are of Template "LandingPage" which inherits from "Page".
