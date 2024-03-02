@@ -77,12 +77,19 @@ for example:
 ## Usage instructions
 
 ### Install PowerShell Module Package
-[Package Download](/docs/modulefiles/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip)
+[PowerShell Module Package Download](/docs/modulefiles/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip) - Right-click, Save As...
 
 ### Install Content and Template Test Data Package
+[Content and Template Package Download (zip)](/docs/modulefiles/GuppyCodeCrew-ContentAndTemplates.zip) - Right-click, Save As...
+
+### Module Location
+You can find the PowerShell module here:
+```
+/sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew
+```
 
 ### How To Use
-You can access the powershell script "Generate GraphQL Query" for any item in the content tree by right-clicking
+You can access the powershell script "Generate GraphQL Query" for any item in the content or media tree by right-clicking on a content item.
 ![Access PowerShell Script](docs/images/screenshot1.png?raw=true "Access PowerShell Script")
 
 Once the script runs for all items you'll be able to access an Item Query that you can then copy and paste into the Playground IDE
