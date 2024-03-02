@@ -107,7 +107,7 @@ SharedFields:
     
     $ancestorSite = $item.Axes.GetAncestors() | Where-Object { $_.TemplateID -eq "{873173B3-8BE6-410C-AF2B-379088594532}" } | Select-Object -First 1
     $siteName = $ancestorSite.Name
-    $route = $item.Paths.Path -replace ("^.*?/$($siteName)/Home?", "")
+    $route = ($item.Paths.Path -replace "^.*?/$($siteName)/Home?", "").ToLower().Replace(" ", "-")
     $graphQLLayoutQuery = @"
     {
      layout(site: "$siteName", routePath: "$route", language: "en") {
@@ -118,11 +118,24 @@ SharedFields:
     }
     "@
     
-    $result = Read-Variable -Parameters `
+    $description = "GraphQL queries grouped by tabs"
+    $title = "Guppy Code Crew GraphQL Generator"
+    
+    # Check if the item has presentation details
+    if ($item."__Renderings") {
+        Write-Host "The item has a layout."
+        $result = Read-Variable -Parameters `
         @{ Name = "multiText"; Value=$graphQLItemQuery; Title="Copy and Paste Query Below Into Playground or as query"; lines=20; Tooltip="You can put multi line text here"; Tab="Item Query"; Placeholder="You see this when text box is empty"},
     @{ Name = "layoutText"; Value=$graphQLLayoutQuery ; Title="Copy and Paste Query Below Into Playground or as query"; lines=20; Tooltip="You can put multi line text here"; Tab="Layout Query"; Placeholder="You see this when text box is empty"}`
-        -Description "GraphQL queries grouped by tabs" `
-        -Title "Guppy Code Crew GraphQL Generator" -Width 600 -Height 640 -OkButtonName "Close"
+        -Description $description `
+        -Title $title -Width 600 -Height 640 -OkButtonName "Close"
+    } else {
+        Write-Host "The item does not have a layout."
+        $result = Read-Variable -Parameters `
+        @{ Name = "multiText"; Value=$graphQLItemQuery; Title="Copy and Paste Query Below Into Playground or as query"; lines=20; Tooltip="You can put multi line text here"; Tab="Item Query"; Placeholder="You see this when text box is empty"}`
+        -Description $description `
+        -Title $title -Width 600 -Height 640 -OkButtonName "Close"
+    }
     
     
 Languages:
@@ -143,11 +156,11 @@ Languages:
         sitecore\daustin@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "f8a472d9-3af2-4713-866b-70935a2727bb"
+      Value: "613a33a2-1e01-475e-b881-7ff91a2b604e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T050515Z
+      Value: 20240302T055535Z
