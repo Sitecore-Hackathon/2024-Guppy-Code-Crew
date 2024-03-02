@@ -2,7 +2,7 @@
 ID: "ebc39cda-a238-4c8e-8c82-bf45b94cfc79"
 Parent: "a8ca5ee4-3ad6-4a3b-8a40-bd32bab14798"
 Template: "6d82fcd8-c379-443c-97a9-c6423c71e7d5"
-Path: /sitecore/system/Modules/PowerShell/Script Library/SPE/GuppyCodeCrew/Generate GraphQL Query
+Path: /sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew/Generate GraphQL Query
 SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon

@@ -2,7 +2,7 @@
 ID: "083e79df-8f72-43ad-95c0-8fa184db000e"
 Parent: "ebc39cda-a238-4c8e-8c82-bf45b94cfc79"
 Template: "ab154d3d-1126-4ab4-ac21-8b86e6bd70ea"
-Path: /sitecore/system/Modules/PowerShell/Script Library/SPE/GuppyCodeCrew/Generate GraphQL Query/Functions
+Path: /sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew/Generate GraphQL Query/Functions
 SharedFields:
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder

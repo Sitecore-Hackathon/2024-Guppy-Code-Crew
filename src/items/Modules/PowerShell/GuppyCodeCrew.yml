@@ -1,8 +1,8 @@
 ﻿---
 ID: "a8ca5ee4-3ad6-4a3b-8a40-bd32bab14798"
-Parent: "36657c88-3f10-4b16-a3c7-03e011b0f6c2"
+Parent: "a3572733-5062-43e9-a447-54698bc1c637"
 Template: "b6a55ac6-a602-4c09-ac3a-1d2938621d5b"
-Path: /sitecore/system/Modules/PowerShell/Script Library/SPE/GuppyCodeCrew
+Path: /sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew
 Languages:
 - Language: en
   Versions:
@@ -21,11 +21,11 @@ Languages:
         sitecore\daustin@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "c60be5d2-f156-448a-8479-06d6205135e4"
+      Value: "aefca098-45f0-4b6f-aa4b-c57edf0f91d8"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T031032Z
+      Value: 20240302T161638Z

@@ -76,10 +76,15 @@ for example:
 
 ## Usage instructions
 ⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
+
+### How To Use
+You can access the powershell script "Generate GraphQL Query" for any item in the content tree by right-clicking
 ![Access PowerShell Script](docs/images/screenshot1.png?raw=true "Access PowerShell Script")
 
+Once the script runs for all items you'll be able to access an Item Query that you can then copy and paste into the Playground IDE
 ![Copy Item Query](docs/images/screenshot2.png?raw=true "Copy Item Query")
 
+For items in the content tree that have a layout, you can access the Layout Query that you can then copy and paste into the Playground IDE
 ![Copy Layout Query](docs/images/screenshot3.png?raw=true "Copy Layout Query")
 
 Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:

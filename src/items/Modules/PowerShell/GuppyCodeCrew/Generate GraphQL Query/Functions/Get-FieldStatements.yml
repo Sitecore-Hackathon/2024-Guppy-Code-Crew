@@ -2,7 +2,7 @@
 ID: "377fe481-f6f6-411f-adb1-42f0a25b0d37"
 Parent: "083e79df-8f72-43ad-95c0-8fa184db000e"
 Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
-Path: "/sitecore/system/Modules/PowerShell/Script Library/SPE/GuppyCodeCrew/Generate GraphQL Query/Functions/Get-FieldStatements"
+Path: "/sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew/Generate GraphQL Query/Functions/Get-FieldStatements"
 SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
@@ -27,10 +27,13 @@ SharedFields:
         )
     
         $fieldStatements = $($QueryItemFields.Keys | ForEach-Object {
-            $fieldName = $QueryItemFields[$_].name
-            $firstChar = $fieldName[0].ToString().ToLower()
-            $fieldName = $firstChar + $fieldName.Substring(1)
-            $fieldName = $fieldName -replace '\s', ''
+        $fieldName = $QueryItemFields[$_].name
+        # Make the first character lowercase
+        $firstChar = $fieldName[0].ToString().ToLower()
+        $fieldName = $firstChar + $fieldName.Substring(1)
+    
+        # Remove spaces
+        $fieldName = $fieldName -replace '\s', ''
             $fieldType = $QueryItemFields[$_].type
             if ($QueryItemFields[$_].type -eq "LinkField") {
                "$($fieldName) { `n        id`n        url`n        target`n        text`n        anchor`n      }"
@@ -62,11 +65,11 @@ Languages:
         sitecore\ddunn@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "d58ddfc8-8c9f-4ff4-8334-68d2bc178131"
+      Value: "385448b5-da02-420b-a765-2712f78359a6"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\daustin@getfishtank.ca
+        sitecore\ddunn@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T145152Z
+      Value: 20240302T152513Z

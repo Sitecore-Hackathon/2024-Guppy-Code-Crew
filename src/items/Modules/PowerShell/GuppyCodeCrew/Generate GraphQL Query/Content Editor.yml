@@ -2,7 +2,7 @@
 ID: "07f34319-c18b-4c63-a6fd-adb879940402"
 Parent: "ebc39cda-a238-4c8e-8c82-bf45b94cfc79"
 Template: "ab154d3d-1126-4ab4-ac21-8b86e6bd70ea"
-Path: /sitecore/system/Modules/PowerShell/Script Library/SPE/GuppyCodeCrew/Generate GraphQL Query/Content Editor
+Path: /sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew/Generate GraphQL Query/Content Editor
 Languages:
 - Language: en
   Versions:
