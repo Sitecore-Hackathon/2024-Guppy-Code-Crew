@@ -12,14 +12,12 @@ You can find a very good reference to Github flavoured markdown reference in [th
 ⟹ Guppy Code Crew
 
 ## Category
-⟹ Write the name of the selected category
-
-## Description
 ⟹ Best Module for XM/XP or XM Cloud  
 
-  - Module Purpose: Generate GraphQL item and layout queries from any selected Sitecore item. 
+## Description
+  - Module Purpose: Generate GraphQL item and layout queries from any selected Sitecore item in the content and media tree. 
   
-  - Problem Solved: This PowerShell script, by generating either an item query or a layout query allows the developer to quickly get from having no GraphQL to a base skeleton of the item they are trying to obtain, saving them time and providing them potential examples.
+  - Problem Solved: This PowerShell script, by generating either an item query or a layout query allows the developer to quickly get from having no GraphQL query to a base skeleton of the item they are trying to obtain, saving them time and providing them potential examples.
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
@@ -30,32 +28,23 @@ You can find a very good reference to Github flavoured markdown reference in [th
 ## Pre-requisites and Dependencies
 
 ⟹ Does your module rely on other Sitecore modules or frameworks?
-- PowerShell
+- PowerShell / SPE
+- Headless SXA
 - GraphQL Playground via: https://xmcloudcm.localhost/sitecore/api/graph/edge/ide
-- List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
+- Docker
 
 ## Installation instructions
-⟹ Write a short clear step-wise instruction on how to install your module.  
-
-> _A simple well-described installation process is required to win the Hackathon._  
-> Feel free to use any of the following tools/formats as part of the installation:
-> - Sitecore Package files
-> - Docker image builds
-> - Sitecore CLI
-> - msbuild
-> - npm / yarn
-> 
-> _Do not use_
-> - TDS
-> - Unicorn
- 
-for example:
+We have two options, the first is to clone the repo, and launch the XM Cloud Foundation via the Docker Setup instructions provided. Or, install the packages provided in the Usage Instructions.
 
 ### Clone Repo
 
+Clone the repo from the following URL:
+```
+https://github.com/Sitecore-Hackathon/2024-Guppy-Code-Crew.git
+```
+
 ### Docker Setup
+We used Docker along with the Sitecore Foundation Head for XM Cloud as our base. 
 
 1. In an ADMIN terminal:
 
@@ -74,6 +63,28 @@ for example:
     dotnet sitecore ser push
     ```
 
+4. Open up Content Editor via the following url:
+```
+https://xmcloudcm.localhost/sitecore/shell/?sc_lang=en
+```
+
+5. Open up the GraphQL IDE Playground via the following url:
+```
+https://xmcloudcm.localhost/sitecore/api/graph/edge/ide
+```
+
+6. Obtain the API key for the playground here:
+```
+/sitecore/system/Settings/Services/API Keys/xmcloudpreview
+```
+
+7. Paste it into the playground in the following format in the Http Headers tab at the bottom of your screen:
+```
+{
+  "sc_apikey":"FC1EF909-5D16-4C5C-A6A3-CD08382E2D9D"
+}
+```
+
 ## Usage instructions
 
 ### Install PowerShell Module Package
@@ -88,6 +99,8 @@ You can find the PowerShell module here:
 /sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew
 ```
 
+The package provided above allow you to install on a XM Cloud or XM/XP 10 instance which has SPE installed.
+
 ### How To Use
 You can access the powershell script "Generate GraphQL Query" for any item in the content or media tree by right-clicking on a content item.
 ![Access PowerShell Script](docs/images/screenshot1.png?raw=true "Access PowerShell Script")
@@ -101,14 +114,6 @@ For items in the content tree that have a layout, you can access the Layout Quer
 Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
-
-You can embed images of different formats too:
-
-![Deal With It](docs/images/deal-with-it.gif?raw=true "Deal With It")
-
-And you can embed external images too:
-
-![Random](https://thiscatdoesnotexist.com/)
 
 ## Comments
 If you'd like to make additional comments that is important for your module entry.
