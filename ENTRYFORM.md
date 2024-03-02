@@ -1,85 +1,131 @@
 # Hackathon Submission Entry form
-
-> __Important__  
-> 
-> Copy and paste the content of this file into README.md or face automatic __disqualification__  
-> All headlines and subheadlines shall be retained if not noted otherwise.  
-> Fill in text in each section as instructed and then delete the existing text, including this blockquote.
-
-You can find a very good reference to Github flavoured markdown reference in [this cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet). If you want something a bit more WYSIWYG for editing then could use [StackEdit](https://stackedit.io/app) which provides a more user friendly interface for generating the Markdown code. Those of you who are [VS Code fans](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview) can edit/preview directly in that interface too.
-
 ## Team name
-⟹ Write the name of your Hackathon team here
+⟹ Guppy Code Crew
 
 ## Category
-⟹ Write the name of the selected category
+⟹ Best Module for XM/XP or XM Cloud  
 
 ## Description
-⟹ Write a clear description of your hackathon entry.  
+  - Module Purpose: Assist developers to get started with GraphQL and fetching data to populate front-end components. A GraphQL query can be generated from any selected Sitecore item in the content and media tree. 
 
-  - Module Purpose
-  - What problem was solved (if any)
-    - How does this module solve it
-
-_You can alternately paste a [link here](#docs) to a document within this repo containing the description._
+  - Problem Solved: This PowerShell script, by generating either an item query or a layout query allows the developer to quickly get started. In an instant, users can go from having no GraphQL query to a base skeleton of the item they are trying to obtain, saving them time and providing them potential examples. The generated query can be tested in the Sitecore Playground to visualize the data returned from the query. 
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
-
-⟹ [Replace this Video link](#video-link)
-
-
+⟹ [Sitecore Hackathon 2024 - Guppy Code Crew - GraphQL Query Generator Video](https://www.youtube.com/watch?v=isrlK0SYzsk)
 
 ## Pre-requisites and Dependencies
 
 ⟹ Does your module rely on other Sitecore modules or frameworks?
-
-- List any dependencies
-- Or other modules that must be installed
-- Or services that must be enabled/configured
-
-_Remove this subsection if your entry does not have any prerequisites other than Sitecore_
+- PowerShell / SPE
+- Headless SXA
+- GraphQL Playground via: https://xmcloudcm.localhost/sitecore/api/graph/edge/ide
+- Docker
 
 ## Installation instructions
-⟹ Write a short clear step-wise instruction on how to install your module.  
+We have two options, the first is to clone the repo, and launch the XM Cloud Foundation via the Docker Setup instructions provided. Or, install the packages provided in the Usage Instructions.
 
-> _A simple well-described installation process is required to win the Hackathon._  
-> Feel free to use any of the following tools/formats as part of the installation:
-> - Sitecore Package files
-> - Docker image builds
-> - Sitecore CLI
-> - msbuild
-> - npm / yarn
-> 
-> _Do not use_
-> - TDS
-> - Unicorn
- 
-for example:
+### Clone Repo
 
-1. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-2. ...
-3. profit
+Clone the repo from the following URL:
+```
+https://github.com/Sitecore-Hackathon/2024-Guppy-Code-Crew.git
+```
 
-### Configuration
-⟹ If there are any custom configuration that has to be set manually then remember to add all details here.
+### Docker Setup
+We used Docker along with the Sitecore Foundation Head for XM Cloud as our base. 
 
-_Remove this subsection if your entry does not require any configuration that is not fully covered in the installation instructions already_
+1. In an ADMIN terminal:
+
+    ```ps1
+    .\init.ps1 -InitEnv -LicenseXmlPath "C:\path\to\license.xml" -AdminPassword "DesiredAdminPassword"
+    ```
+
+2. Restart your terminal and run:
+
+    ```ps1
+    .\up.ps1
+    ```
+3. Run the following command to push all serialized items, including example items into Sitecore
+
+    ```ps1
+    dotnet sitecore ser push
+    ```
+4. While the dotnet sitecore ser push above would push both the content, templates AND the PowerShell module, a bug was discovered during the course of the Hackathon where as the serialization of PowerShell modules did not get indexed and available. [Sitecore Community - SPE - Bug](https://sitecorechat.slack.com/archives/C09THADMX/p1709394930730419?thread_ts=1709394003.679919&cid=C09THADMX)
+
+As such we strongly recommend at this time installing the two packages below to ensure all approprate content is available.
+
+
+
+-- Install PowerShell Module Package
+[PowerShell Module Package Download](/docs/modulefiles/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip) - Navigate to and download the zip file from the menu.
+
+-- Install Content and Template Test Data Package
+[Content and Template Package Download (zip)](/docs/modulefiles/GuppyCodeCrew-ContentAndTemplates.zip) - Navigate to and download the zip file from the menu.
+
+Once done
+
+5. Open up Content Editor via the following url:
+```
+https://xmcloudcm.localhost/sitecore/shell/?sc_lang=en
+```
+
+6. Open up the GraphQL IDE Playground via the following url:
+```
+https://xmcloudcm.localhost/sitecore/api/graph/edge/ide
+```
+
+7. Obtain the API key for the playground here:
+```
+/sitecore/system/Settings/Services/API Keys/xmcloudpreview
+```
+
+8. Paste it into the playground in the following format in the Http Headers tab at the bottom of your screen:
+```
+{
+  "sc_apikey":"FC1EF909-5D16-4C5C-A6A3-CD08382E2D9D"
+}
+```
+
+Your setup is now complete. Please proceed to the Usage Instructions.
 
 ## Usage instructions
-⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
+By installing the sample content in the package above you will have a ready Headless Tenant/Site and sample content to try out the PowerShell module.
 
-Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+1. Navigate to an item in the site tree, here's an example
+```
+/sitecore/content/Guppy Code Crew/Hackathon/Home/About Us/Company
+```
+
+2. Next, right-click on the item and navigate to the Scripts sub menu.
+
+3. Select *Generate GraphQL Query*
+
+4. A dialog should open up. As the above link has a layout, you'll have two tabs.  Select either, copy the text and paste it into the 
+
+### Module Location
+You can find the PowerShell module here:
+```
+/sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew
+```
+
+The package provided above allow you to install on a XM Cloud or XM/XP 10 instance which has SPE installed.
+
+### How To Use
+You can access the powershell script "Generate GraphQL Query" for any item in the content or media tree by right-clicking on a content item.
+
+![Access PowerShell Script](docs/images/screenshot1.png?raw=true "Access PowerShell Script")
+
+Once the script runs for all items you'll be able to access an Item Query that you can then copy and paste into the Playground IDE
+
+![Copy Item Query](docs/images/screenshot2.png?raw=true "Copy Item Query")
+
+For items in the content tree that have a layout, you can access the Layout Query that you can then copy and paste into the Playground IDE
+
+![Copy Layout Query](docs/images/screenshot3.png?raw=true "Copy Layout Query")
+
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
-You can embed images of different formats too:
-
-![Deal With It](docs/images/deal-with-it.gif?raw=true "Deal With It")
-
-And you can embed external images too:
-
-![Random](https://thiscatdoesnotexist.com/)
-
 ## Comments
-If you'd like to make additional comments that is important for your module entry.
+We are aware of one bug where performing GraphQL Query Generator against a template of name "Page" creates an error. Hence all "pages" in the sample site are of Template "LandingPage" which inherits from "Page".

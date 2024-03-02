@@ -1,0 +1,13 @@
+{
+	"namespace": "System",
+	"items": {
+		"includes": [
+			{
+				"name": "Modules/PowerShell",
+				"path": "/sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew",
+				"scope": "ItemAndDescendants",
+				"allowedPushOperations": "createUpdateAndDelete"
+			}
+		]
+	}
+}

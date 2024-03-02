@@ -1,0 +1,60 @@
+﻿---
+ID: "60f92148-f6c3-4a47-9147-d7c287674345"
+Parent: "e5b383df-4960-4eee-a96e-34b633c0adf8"
+Template: "eea11ea0-c30e-413f-a10b-b4e3ad06c6c8"
+Path: /sitecore/content/Guppy Code Crew/Hackathon/Data/Cool Banner Folder/AmazingBanner
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "09fca9c8-c618-4e25-8b8f-84d1f3de6b60"
+      Hint: multilist
+      Value: "{19FE8E76-042A-4114-B4F0-6A36013C2483}"
+    - ID: "15021332-a1a5-4425-958e-8f67f9ee428e"
+      Hint: heading
+      Value: This is a heading for an Amazing Banner
+    - ID: "158c7cba-1754-4028-85a6-39bbb24adeb0"
+      Hint: body
+      Value: <p>This is an amazing banner</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240302T170645Z
+    - ID: "3f502b6c-5732-4d8e-8025-5362f372bab8"
+      Hint: dateTime
+      Value: 20240302T173200Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "6e721963-84a0-413f-a26c-e0327195555c"
+      Hint: link
+      Value: |
+        <link text="Google" linktype="external" url="https://www.google.com" anchor="" target="" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "852f345f-682d-41d2-b6e2-b5cb73e2916d"
+    - ID: "b3c1c4b2-f140-4202-924e-0dade6094b0e"
+      Hint: caption
+      Value: This is a caption for an Amazing Banner
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "c04fba93-096c-4ce2-b0ed-5c34145de296"
+      Hint: checkbox
+      Value: 1
+    - ID: "ce89f9d6-7bbc-4958-8bdd-e2a1d90bf7e6"
+      Hint: dropLink
+      Value: "{F6D79DFA-115C-4CBE-8658-F5C4F07F0373}"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T173318Z
+    - ID: "e845b7b9-b1c8-407e-ac39-3532de3bc20c"
+      Hint: image
+      Value: |
+        <image mediaid="{094AED03-02E7-4868-80CB-19926661FB77}" />

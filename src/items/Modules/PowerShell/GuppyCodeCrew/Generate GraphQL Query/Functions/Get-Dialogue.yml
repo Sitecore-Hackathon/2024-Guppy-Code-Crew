@@ -1,0 +1,83 @@
+﻿---
+ID: "339bd170-20c7-4608-8211-301e3a5e7e1a"
+Parent: "083e79df-8f72-43ad-95c0-8fa184db000e"
+Template: "dd22f1b3-bd87-4db2-9e7d-f7a496888d43"
+Path: "/sitecore/system/Modules/PowerShell/Script Library/GuppyCodeCrew/Generate GraphQL Query/Functions/Get-Dialogue"
+SharedFields:
+- ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
+  Hint: Script
+  Value: |
+    function Get-Dialogue {
+     <#
+    .SYNOPSIS
+        Get-Dialogue opens a window for the user to view the GraphQL query they have generated. Determined whether or not an item has a layout. 
+    .DESCRIPTION
+        This function creates all text to be displayed in a results window, where generated GraphQL queries are displayed. If the item has a layout, Get-Dialogue provides a second tab to display the layout query.
+    
+    .PARAMETER GraphQLItemQuery
+         Generated GraphQL query to retrieve all item fields and values.
+    
+    .PARAMETER GraphQLLayoutQuery
+         Generated GraphQL query to retrieve all layout fields and values.
+    
+    .EXAMPLE
+         $result = Get-Dialogue -GraphQLItemQuery $graphQLItemQuery -GraphQLLayoutQuery $graphQLLayoutQuery -Description $description -Title $title
+         This example creates a UI to display the GraphQL queries generated for both the item, and the layout (if it exists). Uses Description and Title to populate the 
+         heading and description text of the UI element.
+    #>
+       param (
+            [string]$GraphQLItemQuery,
+            [string]$GraphQLLayoutQuery
+        )
+    
+        # Define dialog menu text
+        $description = "GraphQL queries grouped by tabs"
+        $title = "Guppy Code Crew GraphQL Query Generator"
+        $fieldTitle = "Copy and Paste Query Below Into Playground or as query"
+        $toolTip = "You can put multi line text here"
+        $placeholderText = "You see this when text box is empty"
+    
+        # Determine dialog to show whether item has layout or not
+        if ($item."__Renderings") {
+            $result = Read-Variable -Parameters `
+                @{ Name = "multiText"; Value=$GraphQLItemQuery; Title=$fieldTitle; lines=20; Tooltip=$toolTip; Tab="Item Query"; Placeholder=$placeholderText},
+                @{ Name = "layoutText"; Value=$GraphQLLayoutQuery ; Title=$fieldTitle; lines=20; Tooltip=$toolTip; Tab="Layout Query"; Placeholder=$placeholderText}`
+                -Description $Description `
+                -Title $Title -Width 600 -Height 640 -OkButtonName "Close"
+        } else {
+            $result = Read-Variable -Parameters `
+                @{ Name = "multiText"; Value=$GraphQLItemQuery; Title=$fieldTitle; lines=20; Tooltip=$toolTip; Tab="Item Query"; Placeholder=$placeholderText}`
+                -Description $Description `
+                -Title $Title -Width 600 -Height 640 -OkButtonName "Close"
+        }
+    
+        return $result
+    }
+    
+        
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240302T153625Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\ddunn@getfishtank.ca
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\ddunn@getfishtank.ca
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "370a646c-d8c6-4f8a-80bf-dd36cc48b674"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T194654Z

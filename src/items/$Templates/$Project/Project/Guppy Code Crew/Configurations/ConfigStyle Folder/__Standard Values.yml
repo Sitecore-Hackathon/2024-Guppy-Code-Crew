@@ -1,0 +1,37 @@
+﻿---
+ID: "34fd6406-fd46-43ca-8d04-d46d92a751c0"
+Parent: "6da8fd9c-ef7f-426e-8cf5-f6c19ca266b4"
+Template: "6da8fd9c-ef7f-426e-8cf5-f6c19ca266b4"
+Path: /sitecore/templates/Project/Guppy Code Crew/Configurations/ConfigStyle Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {7A763A3E-DF65-4BC5-9DE5-8662CBBA4FA0}
+    {6DA8FD9C-EF7F-426E-8CF5-F6C19CA266B4}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240302T170946Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8e684068-d7c6-42d2-90dc-6b3c3b7e1b39"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T170959Z
