@@ -86,7 +86,9 @@ If you'd like to make additional comments that is important for your module entr
 
 # XM Cloud Starter Kit (Next JS)
 
-## QUICK START
+### Clone Repo
+
+### Docker Setup
 
 1. In an ADMIN terminal:
 
@@ -99,12 +101,23 @@ If you'd like to make additional comments that is important for your module entr
     ```ps1
     .\up.ps1
     ```
+3. Run the following command to push all serialized items, including example items into Sitecore
 
-3. Follow the instructions to [deploy to XM Cloud](#deploy-to-xmcloud)
+    ```ps1
+    dotnet sitecore ser push
+    ```
 
-4. Create Edge token and [query from edge](#query-edge)
+## Usage instructions
+⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
+![Access PowerShell Script](docs/images/screenshot1.png?raw=true "Access PowerShell Script")
 
-*** 
+![Copy Item Query](docs/images/screenshot2.png?raw=true "Copy Item Query")
+
+![Copy Layout Query](docs/images/screenshot3.png?raw=true "Copy Layout Query")
+
+Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
+
+![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
 ## About this Solution
 This solution is designed to help developers learn and get started quickly

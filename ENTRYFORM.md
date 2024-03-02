@@ -76,6 +76,11 @@ for example:
 
 ## Usage instructions
 ⟹ Provide documentation about your module, how do the users use your module, where are things located, what do the icons mean, are there any secret shortcuts etc.
+![Access PowerShell Script](docs/images/screenshot1.png?raw=true "Access PowerShell Script")
+
+![Copy Item Query](docs/images/screenshot2.png?raw=true "Copy Item Query")
+
+![Copy Layout Query](docs/images/screenshot3.png?raw=true "Copy Layout Query")
 
 Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
 
