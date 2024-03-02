@@ -1,4 +1,5 @@
-# Hackathon Submission Entry form
+![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
+# Sitecore Hackathon 2024
 
 ## Team name
 ⟹ Guppy Code Crew
@@ -7,15 +8,13 @@
 ⟹ Best Module for XM/XP or XM Cloud  
 
 ## Description
-  - Module Purpose: Generate GraphQL item and layout queries from any selected Sitecore item in the content and media tree. 
-  
-  - Problem Solved: This PowerShell script, by generating either an item query or a layout query allows the developer to quickly get from having no GraphQL query to a base skeleton of the item they are trying to obtain, saving them time and providing them potential examples.
+  - Module Purpose: Assist developers to get started with GraphQL and fetching data to populate front-end components. A GraphQL query can be generated from any selected Sitecore item in the content and media tree. 
+
+  - Problem Solved: This PowerShell script, by generating either an item query or a layout query allows the developer to quickly get started. In an instant, users can go from having no GraphQL query to a base skeleton of the item they are trying to obtain, saving them time and providing them potential examples. The generated query can be tested in the Sitecore Playground to visualize the data returned from the query. 
 
 ## Video link
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
-⟹ [Replace this Video link](#video-link)
-
-
+⟹ [Sitecore Hackathon 2024 - Guppy Code Crew - GraphQL Query Generator Video](https://www.youtube.com/watch?v=isrlK0SYzsk)
 
 ## Pre-requisites and Dependencies
 
