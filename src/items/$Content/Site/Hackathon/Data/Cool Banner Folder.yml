@@ -1,0 +1,23 @@
+﻿---
+ID: "e5b383df-4960-4eee-a96e-34b633c0adf8"
+Parent: "0fadd6f2-74a2-497a-b0b8-80b7932a9d56"
+Template: "df16215d-aea4-463a-8a67-0211bc61b974"
+Path: /sitecore/content/Guppy Code Crew/Hackathon/Data/Cool Banner Folder
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240302T012726Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "08da9f7b-da2e-4415-b618-0031714161f4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T012726Z
