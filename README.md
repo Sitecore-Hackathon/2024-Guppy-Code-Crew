@@ -94,15 +94,17 @@ The package provided above allow you to install on a XM Cloud or XM/XP 10 instan
 
 ### How To Use
 You can access the powershell script "Generate GraphQL Query" for any item in the content or media tree by right-clicking on a content item.
+
 ![Access PowerShell Script](docs/images/screenshot1.png?raw=true "Access PowerShell Script")
 
 Once the script runs for all items you'll be able to access an Item Query that you can then copy and paste into the Playground IDE
+
 ![Copy Item Query](docs/images/screenshot2.png?raw=true "Copy Item Query")
 
 For items in the content tree that have a layout, you can access the Layout Query that you can then copy and paste into the Playground IDE
+
 ![Copy Layout Query](docs/images/screenshot3.png?raw=true "Copy Layout Query")
 
-Include screenshots where necessary. You can add images to the `./images` folder and then link to them from your documentation:
 
 ![Hackathon Logo](docs/images/hackathon.png?raw=true "Hackathon Logo")
 
