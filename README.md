@@ -80,10 +80,10 @@ https://xmcloudcm.localhost/sitecore/api/graph/edge/ide
 ## Usage instructions
 
 ### Install PowerShell Module Package
-[PowerShell Module Package Download](/docs/modulefiles/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip) - Right-click, Save As...
+[PowerShell Module Package Download](/docs/modulefiles/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip) - Navigate to and download the zip file from the menu.
 
 ### Install Content and Template Test Data Package
-[Content and Template Package Download (zip)](/docs/modulefiles/GuppyCodeCrew-ContentAndTemplates.zip) - Right-click, Save As...
+[Content and Template Package Download (zip)](/docs/modulefiles/GuppyCodeCrew-ContentAndTemplates.zip) - Navigate to and download the zip file from the menu.
 
 ### Module Location
 You can find the PowerShell module here:
