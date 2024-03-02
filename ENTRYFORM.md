@@ -77,7 +77,7 @@ for example:
 ## Usage instructions
 
 ### Install PowerShell Module Package
-[Package Download](/docs/packages/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip)
+[Package Download](/docs/modulefiles/GuppyCodeCrew-GenerateGraphQLQuery-Module-1.zip)
 
 ### Install Content and Template Test Data Package
 
