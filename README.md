@@ -103,7 +103,7 @@ By installing the sample content in the package above you will have a ready Head
 
 3. Select *Generate GraphQL Query*
 
-4. A dialog should open up. As the above link has a layout, you'll have two tabs.  Select either, copy the text and paste it into the 
+4. A dialog should open up. As the above link has a layout, you'll have two tabs.  Select either, copy the text and paste it into the Sitecore Playground IDE or use it as part of a component.
 
 ### Module Location
 You can find the PowerShell module here:
