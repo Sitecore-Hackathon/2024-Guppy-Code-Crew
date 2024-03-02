@@ -8,25 +8,45 @@ SharedFields:
   Hint: Script
   Value: |
     function Get-Dialogue {
-        param (
-            [bool]$HasLayout,
+     <#
+    .SYNOPSIS
+        Get-Dialogue opens a window for the user to view the GraphQL query they have generated. Determined whether or not an item has a layout. 
+    .DESCRIPTION
+        This function creates all text to be displayed in a results window, where generated GraphQL queries are displayed. If the item has a layout, Get-Dialogue provides a second tab to display the layout query.
+    
+    .PARAMETER GraphQLItemQuery
+         Generated GraphQL query to retrieve all item fields and values.
+    
+    .PARAMETER GraphQLLayoutQuery
+         Generated GraphQL query to retrieve all layout fields and values.
+    
+    .EXAMPLE
+         $result = Get-Dialogue -GraphQLItemQuery $graphQLItemQuery -GraphQLLayoutQuery $graphQLLayoutQuery -Description $description -Title $title
+         This example creates a UI to display the GraphQL queries generated for both the item, and the layout (if it exists). Uses Description and Title to populate the 
+         heading and description text of the UI element.
+    #>
+       param (
             [string]$GraphQLItemQuery,
-            [string]$GraphQLLayoutQuery,
-            [string]$Description,
-            [string]$Title
+            [string]$GraphQLLayoutQuery
         )
     
+        # Define dialog menu text
+        $description = "GraphQL queries grouped by tabs"
+        $title = "Guppy Code Crew GraphQL Generator"
+        $fieldTitle = "Copy and Paste Query Below Into Playground or as query"
+        $toolTip = "You can put multi line text here"
+        $placeholderText = "You see this when text box is empty"
+    
+        # Determine dialog to show whether item has layout or not
         if ($item."__Renderings") {
-            Write-Host "The item has a layout."
             $result = Read-Variable -Parameters `
-                @{ Name = "multiText"; Value=$GraphQLItemQuery; Title="Copy and Paste Query Below Into Playground or as query"; lines=20; Tooltip="You can put multi line text here"; Tab="Item Query"; Placeholder="You see this when text box is empty"},
-                @{ Name = "layoutText"; Value=$GraphQLLayoutQuery ; Title="Copy and Paste Query Below Into Playground or as query"; lines=20; Tooltip="You can put multi line text here"; Tab="Layout Query"; Placeholder="You see this when text box is empty"}`
+                @{ Name = "multiText"; Value=$GraphQLItemQuery; Title=$fieldTitle; lines=20; Tooltip=$toolTip; Tab="Item Query"; Placeholder=$placeholderText},
+                @{ Name = "layoutText"; Value=$GraphQLLayoutQuery ; Title=$fieldTitle; lines=20; Tooltip=$toolTip; Tab="Layout Query"; Placeholder=$placeholderText}`
                 -Description $Description `
                 -Title $Title -Width 600 -Height 640 -OkButtonName "Close"
         } else {
-            Write-Host "The item does not have a layout."
             $result = Read-Variable -Parameters `
-                @{ Name = "multiText"; Value=$GraphQLItemQuery; Title="Copy and Paste Query Below Into Playground or as query"; lines=20; Tooltip="You can put multi line text here"; Tab="Item Query"; Placeholder="You see this when text box is empty"}`
+                @{ Name = "multiText"; Value=$GraphQLItemQuery; Title=$fieldTitle; lines=20; Tooltip=$toolTip; Tab="Item Query"; Placeholder=$placeholderText}`
                 -Description $Description `
                 -Title $Title -Width 600 -Height 640 -OkButtonName "Close"
         }
@@ -53,11 +73,11 @@ Languages:
         sitecore\ddunn@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "b3e41e7d-d9ed-422e-bdaf-e76052c44ff5"
+      Value: "6b16c9e0-3eff-4dc1-b126-88c1ecf0ce0e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\ddunn@getfishtank.ca
+        sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T160020Z
+      Value: 20240302T165958Z

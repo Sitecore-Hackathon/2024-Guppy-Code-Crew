@@ -1,0 +1,34 @@
+﻿---
+ID: "986efadf-45c9-4a9b-84a0-8b683c9b1588"
+Parent: "3370701d-0e2d-41a9-a15d-c6f25cdc23ba"
+Template: "7a763a3e-df65-4bc5-9de5-8662cbba4fa0"
+Path: /sitecore/content/Guppy Code Crew/Hackathon/Data/ConfigStyle Folder/Right Style
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240302T171050Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "5b9ee5e7-2815-47bb-b31a-17bcb4914a2a"
+      Hint: style
+      Value: "right-design"
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f314e918-20e4-410b-96cb-a74d806927b5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T171054Z

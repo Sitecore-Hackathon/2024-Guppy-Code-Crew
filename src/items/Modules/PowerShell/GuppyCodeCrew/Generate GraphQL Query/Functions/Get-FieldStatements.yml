@@ -7,6 +7,7 @@ SharedFields:
 - ID: "b1a94ff0-6897-47c0-9c51-aa6acb80b1f0"
   Hint: Script
   Value: |
+    function Get-FieldStatements {
     <#
     .SYNOPSIS
         Get-FieldStatements generates statements for all field types to be used in GraphQL queries.
@@ -20,8 +21,6 @@ SharedFields:
         Get-FieldStatements -QueryItemFields $queryItem.fields
         This example retrieves field statements based on the field types stored in the $queryItem.fields hashtable.
     #>
-    
-    function Get-FieldStatements {
         param (
             [hashtable]$QueryItemFields
         )
@@ -35,9 +34,7 @@ SharedFields:
         # Remove spaces
         $fieldName = $fieldName -replace '\s', ''
             $fieldType = $QueryItemFields[$_].type
-            if ($QueryItemFields[$_].type -eq "LinkField") {
-               "$($fieldName) { `n        id`n        url`n        target`n        text`n        anchor`n      }"
-            } elseif ($QueryItemFields[$_].type -eq "TextField") {
+            if ($QueryItemFields[$_].type -eq "TextField") {
                "$($fieldName) { `n        value`n      }"
             } else {
                "$($fieldName) { `n        jsonValue`n      }"
@@ -65,11 +62,11 @@ Languages:
         sitecore\ddunn@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "385448b5-da02-420b-a765-2712f78359a6"
+      Value: "52a252d1-a448-4546-9b77-bdf4cc4dae28"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\ddunn@getfishtank.ca
+        sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T152513Z
+      Value: 20240302T170214Z

@@ -13,12 +13,7 @@ SharedFields:
     Import-Function Get-ItemQuery
     Import-Function Get-Dialogue
     
-    # Set the item path to the item you want to examine
-    #$itemPath = "/sitecore/content/Guppy Code Crew/Hackathon/Data/Cool Banner Folder/CoolBanner"
-    #$itemPath = "/sitecore/content/Guppy Code Crew/Hackathon/Home/About Us/Company"
-    
-    # Get the item
-    #$item = Get-Item -Path $itemPath
+    # Grab Context Item From Right-Click
     $item = Get-Item .
     
     # Get the template of the item
@@ -38,6 +33,7 @@ SharedFields:
         # Add the field object to the array
         $fields += $fieldObject
     }
+    
     # Define the GraphQL query for item format
     $queryItem = @{
         item = @{
@@ -53,23 +49,21 @@ SharedFields:
             continue
         }
         $fieldType = $field.Type
-    
         # Call the new function to add field types to GraphQL query
         $queryItem.fields = Get-GraphQLType -FieldType $fieldType -FieldName $field.Name -QueryItemFields $queryItem.fields
     }
     
-    #Generate field structure by type
+    #Generate field structure by type to be used as part of Item Query
     $fieldStatements = Get-FieldStatements -QueryItemFields $queryItem.fields
     
-    # Define the GraphQL query format
+    # Define the GraphQL Item Query format
     $graphQLItemQuery = Get-ItemQuery -Path $queryItem.item.path -Language "en" -TemplateName $templateItem.Name -FieldStatements $fieldStatements
     
+    # Define the GraphQL Layout Query format
     $graphQLLayoutQuery = Get-LayoutQuery -Item $item
     
-    $description = "GraphQL queries grouped by tabs"
-    $title = "Guppy Code Crew GraphQL Generator"
-    
-    $result = Get-Dialogue -GraphQLItemQuery $graphQLItemQuery -GraphQLLayoutQuery $graphQLLayoutQuery -Description $description -Title $title
+    # Create Dialog
+    $result = Get-Dialogue -GraphQLItemQuery $graphQLItemQuery -GraphQLLayoutQuery $graphQLLayoutQuery
     
 Languages:
 - Language: en
@@ -89,11 +83,11 @@ Languages:
         sitecore\daustin@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "1bfed6bc-61f2-44fa-af5f-6325f84b68d8"
+      Value: "36845961-a6d4-4e7d-8c25-795ba4f1c571"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\ddunn@getfishtank.ca
+        sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T160040Z
+      Value: 20240302T164722Z

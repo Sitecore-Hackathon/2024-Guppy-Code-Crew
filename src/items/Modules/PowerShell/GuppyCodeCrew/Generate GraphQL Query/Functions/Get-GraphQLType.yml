@@ -8,6 +8,27 @@ SharedFields:
   Hint: Script
   Value: |
     function Get-GraphQLType{
+    <#
+    .SYNOPSIS
+        Get-GraphQLType generates statements for all field types to be used in GraphQL queries.
+    
+    .DESCRIPTION
+        This function generates a hashtable of all custom fields and specifies the name and GraphQL type
+    
+    .PARAMETER FieldType 
+        Specifies the field type of the field being passed
+    
+    .PARAMETER FieldName 
+        Specifies the field name of the field being passed
+    
+    .PARAMETER QueryItemFields 
+        Specifies the hashtable being passed
+    
+    .EXAMPLE
+        $queryItem.fields = Get-GraphQLType -FieldType $fieldType -FieldName $field.Name -QueryItemFields $queryItem.fields
+    
+        This example returns the hashtable for all fields 
+    #>
         param(
             [string]$FieldType,
             [string]$FieldName,
@@ -15,10 +36,22 @@ SharedFields:
         )
     
         switch ($FieldType) {
-            {($_ -eq "Single-Line Text") -or ($_ -eq "Multi-Line Text") -or ($_ -eq "Rich Text") -or ($_ -eq "Number") -or ($_ -eq "Integer") -or ($_ -eq "Date") -or ($_ -eq "Datetime") -or ($_ -eq "Checkbox") -or ($_ -eq "DropLink") -or ($_ -eq "Drop Tree")} {
+            {($_ -eq "Single-Line Text") -or ($_ -eq "Multi-Line Text") -or ($_ -eq "Rich Text") -or ($_ -eq "Number") -or ($_ -eq "Integer") -or ($_ -eq "Date") -or ($_ -eq "Datetime") -or ($_ -eq "Checkbox") -or ($_ -eq "Drop Tree")} {
                 $QueryItemFields[$FieldName] = @{
                     name = $FieldName
                     type = "TextField"
+                }
+            }
+            "DropLink" {
+                $QueryItemFields[$FieldName] = @{
+                    name = $FieldName
+                    type = "LookupField"
+                }
+            }
+            "Multilist" {
+                $QueryItemFields[$FieldName] = @{
+                    name = $FieldName
+                    type = "LookupField"
                 }
             }
             "General Link" {
@@ -65,11 +98,11 @@ Languages:
         sitecore\ddunn@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "4d9e53ce-799a-460c-8ad6-9a21186a5189"
+      Value: "bc351469-ba45-4a87-9a61-483559b29e30"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\ddunn@getfishtank.ca
+        sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T135626Z
+      Value: 20240302T170542Z

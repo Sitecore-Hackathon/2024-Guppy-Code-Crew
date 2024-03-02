@@ -8,6 +8,28 @@ SharedFields:
   Hint: Script
   Value: |
     function Get-ItemQuery {
+    <#
+    .SYNOPSIS
+        Get-ItemQuery generates the GraphQL query for an Item
+    .
+    .DESCRIPTION
+        This function generates the GraphQL query for an Item
+    
+    .PARAMETER Path
+        Specifies the path to the item.
+    
+    .PARAMETER Language
+        Specifies the language of the item.
+    
+    .PARAMETER TemplateName
+        Specifies the template name of the item.
+    
+    .PARAMETER FieldStatements
+        Specifies the hashtable containing field names and types for which field statements are generated.
+    
+    .EXAMPLE
+        $graphQLItemQuery = Get-ItemQuery -Path $queryItem.item.path -Language "en" -TemplateName $templateItem.Name -FieldStatements $fieldStatements
+    #>
         param (
             [string]$Path,
             [string]$Language,
@@ -53,11 +75,11 @@ Languages:
         sitecore\ddunn@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "b2a1ee90-593b-4ecb-b178-9eff5490d018"
+      Value: "106e211b-279c-4c09-9baa-8b855737c39e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\ddunn@getfishtank.ca
+        sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T151929Z
+      Value: 20240302T164651Z

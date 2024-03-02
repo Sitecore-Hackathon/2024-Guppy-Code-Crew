@@ -8,6 +8,19 @@ SharedFields:
   Hint: Script
   Value: |
     function Get-LayoutQuery {
+    <#
+    .SYNOPSIS
+        Get-FieldStatements generates statements for all field types to be used in GraphQL queries.
+    .DESCRIPTION
+        This function generates field statements based on the field type for GraphQL queries. It takes a list of fields and, depending on the field type, returns a formatted field statement.
+    
+    .PARAMETER QueryItemFields
+        Specifies the hashtable containing field names and types for which field statements are generated.
+    
+    .EXAMPLE
+        Get-FieldStatements -QueryItemFields $queryItem.fields
+        This example retrieves field statements based on the field types stored in the $queryItem.fields hashtable.
+    #>
         param (
             [Sitecore.Data.Items.Item]$Item
         )
@@ -46,11 +59,11 @@ Languages:
         sitecore\ddunn@getfishtank.ca
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "29719197-a10f-43d5-b0b0-30a9a1cf0d83"
+      Value: "e4f9ce18-343b-47be-a30d-185641005d2c"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
-        sitecore\ddunn@getfishtank.ca
+        sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T150531Z
+      Value: 20240302T165723Z

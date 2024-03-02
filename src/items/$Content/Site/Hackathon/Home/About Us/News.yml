@@ -1,0 +1,34 @@
+﻿---
+ID: "a3fdfb74-4cbc-4b0d-ae5e-c3f64dd3b6a1"
+Parent: "e73cbf70-4de8-48ed-b171-ab457be19238"
+Template: "76b310a7-0851-446e-842d-bd1bf156e779"
+Path: /sitecore/content/Guppy Code Crew/Hackathon/Home/About Us/News
+SharedFields:
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{395023B7-DCA6-488B-896F-EF9B6321D303}" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "035574f2-2e50-466a-bd29-a75d904f03ae"
+      Hint: Title
+      Value: News
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20240302T164825Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: News
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d0eaa1f8-bdfe-4656-b4a7-dad06b0e4834"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\daustin@getfishtank.ca
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20240302T164825Z
