@@ -1,13 +1,13 @@
 ﻿---
 ID: "2e426337-1a55-42a6-94a4-0b001f27af53"
 Parent: "e73cbf70-4de8-48ed-b171-ab457be19238"
-Template: "76b310a7-0851-446e-842d-bd1bf156e779"
+Template: "2920a689-8d92-429c-aacc-fb689adff427"
 Path: /sitecore/content/Guppy Code Crew/Hackathon/Home/About Us/Company
 SharedFields:
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
   Value: |
-    <image mediaid="{17873539-E99E-4DBC-A029-854549C3075C}" />
+    <image mediaid="{F9815F9E-511E-415A-84D2-4E0E8B6A6401}" />
 Languages:
 - Language: en
   Versions:
@@ -24,11 +24,11 @@ Languages:
       Value: Company
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "05a1a28c-55ff-4b85-93c6-da25f7b9ecc3"
+      Value: "1664e34e-cb8c-4b67-aa7d-a0bd85c77f56"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\daustin@getfishtank.ca
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20240302T045131Z
+      Value: 20240302T210702Z
