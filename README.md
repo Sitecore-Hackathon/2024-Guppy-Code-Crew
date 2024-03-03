@@ -13,8 +13,8 @@
   - Problem Solved: This PowerShell script, by generating either an item query or a layout query allows the developer to quickly get started. In an instant, users can go from having no GraphQL query to a base skeleton of the item they are trying to obtain, saving them time and providing them potential examples. The generated query can be tested in the Sitecore Playground to visualize the data returned from the query. 
 
 ## Video link
-⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
-⟹ [Sitecore Hackathon 2024 - Guppy Code Crew - GraphQL Query Generator Video](https://www.youtube.com/watch?v=isrlK0SYzsk)
+
+[Sitecore Hackathon 2024 - Guppy Code Crew - GraphQL Query Generator Video](https://www.youtube.com/watch?v=isrlK0SYzsk)
 
 ## Pre-requisites and Dependencies
 
